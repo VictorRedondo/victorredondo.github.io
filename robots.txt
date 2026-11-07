@@ -1,0 +1,6 @@
+# vredondo.com — todo el contenido es público
+User-agent: *
+Allow: /
+
+Sitemap: https://vredondo.com/sitemap.xml
+Sitemap: https://vredondo.com/loop/sitemap.xml

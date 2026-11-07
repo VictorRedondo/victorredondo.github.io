@@ -1,0 +1,6 @@
+# Víctor Redondo
+
+> Apps for iPhone and Apple Watch designed and published by Víctor Redondo Vargas (Spain).
+
+## Apps
+- [Loop](https://vredondo.com/loop/en/): Apple Watch and iPhone app that connects Bluetooth treadmills and walking pads (FTMS or RSC) to Apple Fitness and Apple Health with the distance, speed and steps the treadmill measures. One-time purchase, no subscription, 4-day free trial. Details: https://vredondo.com/loop/llms.txt
