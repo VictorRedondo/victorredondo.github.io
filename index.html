@@ -1,16 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Víctor Redondo · Apps para iPhone y Apple Watch</title>
 <meta name="description" content="Apps para iPhone y Apple Watch diseñadas y publicadas por Víctor Redondo. Loop conecta tu cinta de correr con Apple Fitness y Salud.">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
 <link rel="canonical" href="https://vredondo.com/">
 <meta property="og:title" content="Víctor Redondo · Apps para iPhone y Apple Watch">
 <meta property="og:description" content="Apps para iPhone y Apple Watch. Loop conecta tu cinta de correr con Apple Fitness y Salud.">
 <meta property="og:url" content="https://vredondo.com/">
-<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#ffffff">
 <link rel="apple-touch-icon" href="/loop/img/icon-180.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -20,48 +20,123 @@
 ]}
 </script>
 <style>
-@font-face{font-family:'Nunito';font-weight:700;font-display:swap;src:url(/loop/fonts/nunito-latin-700-normal.woff2) format('woff2')}
-@font-face{font-family:'Nunito';font-weight:900;font-display:swap;src:url(/loop/fonts/nunito-latin-900-normal.woff2) format('woff2')}
-:root{--bg:#f5f5f7;--card:#fff;--fg:#111;--muted:#5c5c63;--line:#e3e3e8;--lime:#a3fa00;--on-lime:#000;color-scheme:light dark}
-@media (prefers-color-scheme:dark){:root{--bg:#000;--card:#141414;--fg:#f5f5f7;--muted:#a1a1a8;--line:#2a2a2e}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:ui-rounded,'SF Pro Rounded','Nunito',system-ui,sans-serif;font-weight:700;line-height:1.5}
-main{max-width:880px;margin:0 auto;padding:clamp(40px,8vw,96px) 20px 48px}
-.eyebrow{margin:0 0 12px;color:var(--muted);font-size:15px;letter-spacing:.12em;text-transform:uppercase}
-h1{margin:0 0 16px;font-size:clamp(40px,7vw,68px);line-height:1.02;letter-spacing:-.035em;font-weight:900;text-wrap:balance}
-.lead{margin:0 0 48px;color:var(--muted);font-size:clamp(18px,2.2vw,21px);max-width:38ch}
-h2{margin:0 0 16px;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.app{display:flex;gap:22px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:22px;text-decoration:none;color:inherit;transition:transform .2s ease}
-.app:hover{transform:translateY(-2px)}
-.app img{width:92px;height:92px;border-radius:22px;flex:none}
-.app h3{margin:0 0 4px;font-size:24px;font-weight:900;letter-spacing:-.02em}
-.app p{margin:0 0 12px;color:var(--muted)}
-.go{display:inline-flex;align-items:center;gap:6px;background:var(--lime);color:var(--on-lime);border-radius:999px;padding:8px 16px;font-size:15px}
-.soon{margin:20px 0 0;color:var(--muted);font-size:15px}
-footer{max-width:880px;margin:0 auto;padding:24px 20px 40px;color:var(--muted);font-size:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
-footer a{color:inherit}
-@media (max-width:520px){.app{flex-direction:column;align-items:flex-start}}
+  /* Gotham (licencia comercial): si subes tus archivos a /fonts con estos nombres, se usan automáticamente.
+     Mientras tanto, Montserrat (libre y muy parecida) hace de respaldo. */
+  @font-face { font-family: "Gotham"; font-weight: 400; font-display: swap;
+    src: local("Gotham Book"), local("Gotham-Book"), url("fonts/Gotham-Book.woff2") format("woff2"); }
+  @font-face { font-family: "Gotham"; font-weight: 500; font-display: swap;
+    src: local("Gotham Medium"), local("Gotham-Medium"), url("fonts/Gotham-Medium.woff2") format("woff2"); }
+  @font-face { font-family: "Gotham"; font-weight: 700; font-display: swap;
+    src: local("Gotham Bold"), local("Gotham-Bold"), url("fonts/Gotham-Bold.woff2") format("woff2"); }
+  @font-face { font-family: "Gotham"; font-weight: 900; font-display: swap;
+    src: local("Gotham Black"), local("Gotham-Black"), url("fonts/Gotham-Black.woff2") format("woff2"); }
+
+  @font-face { font-family: "Montserrat"; font-weight: 400; font-display: swap; src: url("fonts/montserrat-latin-400-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Montserrat"; font-weight: 500; font-display: swap; src: url("fonts/montserrat-latin-500-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Montserrat"; font-weight: 700; font-display: swap; src: url("fonts/montserrat-latin-700-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Montserrat"; font-weight: 900; font-display: swap; src: url("fonts/montserrat-latin-900-normal.woff2") format("woff2"); }
+
+  :root { --ink: #000; --paper: #fff; --gray: #6b6b6b; --pad: clamp(20px, 4vw, 56px); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Gotham", "Montserrat", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    display: flex; flex-direction: column; min-height: 100vh;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* Cabecera */
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 24px var(--pad);
+  }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand svg { width: 38px; height: 38px; display: block; }
+  .brand span { font-weight: 700; font-size: 17px; letter-spacing: -0.01em; }
+
+  nav ul { list-style: none; display: flex; gap: 32px; }
+  .menu { position: relative; }
+  .menu > button {
+    font: inherit; font-weight: 500; font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase;
+    background: none; border: 0; color: inherit; cursor: pointer;
+    display: flex; align-items: center; gap: 8px; padding: 8px 0;
+  }
+  .menu > button::after {
+    content: ""; width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+    transform: translateY(-2px) rotate(45deg); transition: transform .2s;
+  }
+  .menu.open > button::after { transform: translateY(2px) rotate(-135deg); }
+  .dropdown {
+    position: absolute; right: 0; top: calc(100% + 8px); min-width: 200px;
+    background: var(--paper); border: 1.5px solid var(--ink); padding: 8px 0;
+    opacity: 0; visibility: hidden; transform: translateY(-4px); transition: all .18s ease;
+  }
+  .menu.open .dropdown { opacity: 1; visibility: visible; transform: none; }
+  .dropdown a { display: block; padding: 12px 20px; font-size: 15px; font-weight: 500; }
+  .dropdown a small { display: block; font-weight: 400; font-size: 12px; color: var(--gray); margin-top: 2px; }
+  .dropdown a:hover, .dropdown a:focus-visible { background: var(--ink); color: var(--paper); outline: none; }
+  .dropdown a:hover small, .dropdown a:focus-visible small { color: #bbb; }
+
+  /* Portada */
+  main { flex: 1; display: flex; align-items: center; padding: 0 var(--pad); }
+  h1 {
+    font-weight: 900; line-height: 1.02; letter-spacing: -0.045em;
+    font-size: clamp(64px, 17vw, 260px);
+  }
+
+  footer { padding: 24px var(--pad); font-size: 13px; color: var(--gray); display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; }
+  footer a:hover { color: var(--ink); }
+
+  @media (max-width: 520px) {
+    .brand span { font-size: 15px; }
+    .brand svg { width: 32px; height: 32px; }
+  }
 </style>
 </head>
 <body>
-<main>
-  <p class="eyebrow">Víctor Redondo</p>
-  <h1>Apps para iPhone y Apple&nbsp;Watch</h1>
-  <p class="lead">Diseño y publico apps sencillas que se sienten como parte del sistema.</p>
-  <h2>Apps</h2>
-  <a class="app" href="/loop/">
-    <img src="/loop/img/icon-180.png" alt="" width="92" height="92">
-    <div>
-      <h3>Loop</h3>
-      <p>Conecta tu cinta de correr o walking pad con el Apple Watch y guarda cada entreno en Apple Fitness y Salud con la distancia real. Pago único, sin suscripción, y 4 días de prueba gratis.</p>
-      <span class="go">Ver Loop <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </div>
+
+<header>
+  <a class="brand" href="/" aria-label="Víctor Redondo — inicio">
+    <svg viewBox="184 150 478 480" aria-hidden="true">
+      <polygon points="184,175 364,175 537,475 447,630" fill="currentColor"/>
+      <circle cx="562" cy="250" r="100" fill="currentColor"/>
+    </svg>
+    <span>Víctor Redondo</span>
   </a>
-  <p class="soon">Próximamente, más apps.</p>
+
+  <nav aria-label="Principal">
+    <ul>
+      <li class="menu" id="apps">
+        <button type="button" aria-expanded="false" aria-controls="apps-list">Apps</button>
+        <div class="dropdown" id="apps-list">
+          <a href="/loop/">Loop<small>Tu cinta en Apple Fitness</small></a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <h1>Hi, I’m<br>Víctor.</h1>
 </main>
-<footer>
-  <span>© 2026 Víctor Redondo Vargas</span>
-  <span><a href="/loop/contacto/">Contacto</a> · <a href="/loop/privacidad/">Privacidad</a></span>
-</footer>
+
+<footer><span>© <span id="y"></span> Víctor Redondo Vargas</span><span><a href="/loop/contacto/">Contacto</a> · <a href="/loop/privacidad/">Privacidad</a></span></footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  const menu = document.getElementById('apps');
+  const btn = menu.querySelector('button');
+  const set = open => { menu.classList.toggle('open', open); btn.setAttribute('aria-expanded', open); };
+  const hover = matchMedia('(hover: hover)').matches;
+  btn.addEventListener('click', e => { e.stopPropagation(); set(hover ? true : !menu.classList.contains('open')); });
+  if (hover) {
+    menu.addEventListener('mouseenter', () => set(true));
+    menu.addEventListener('mouseleave', () => set(false));
+  }
+  document.addEventListener('click', e => { if (!menu.contains(e.target)) set(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { set(false); btn.focus(); } });
+</script>
 </body>
 </html>
