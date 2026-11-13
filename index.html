@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Víctor Redondo · Apps para iPhone y Apple Watch</title>
 <meta name="description" content="Apps para iPhone y Apple Watch diseñadas y publicadas por Víctor Redondo. Loop conecta tu cinta de correr con Apple Fitness y Salud.">
-<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="icon" href="/logo.svg" type="image/svg+xml">
 <link rel="canonical" href="https://vredondo.com/">
 <meta property="og:title" content="Víctor Redondo · Apps para iPhone y Apple Watch">
 <meta property="og:description" content="Apps para iPhone y Apple Watch. Loop conecta tu cinta de correr con Apple Fitness y Salud.">
@@ -19,81 +19,7 @@
  {"@type":"SoftwareApplication","name":"Loop: Cinta de correr","operatingSystem":"iOS, watchOS","applicationCategory":"HealthApplication","url":"https://vredondo.com/loop/","installUrl":"https://apps.apple.com/app/loop-cinta-de-correr/id6827310005","author":{"@id":"https://vredondo.com/#me"},"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
 ]}
 </script>
-<style>
-  /* Gotham (licencia comercial): si subes tus archivos a /fonts con estos nombres, se usan automáticamente.
-     Mientras tanto, Montserrat (libre y muy parecida) hace de respaldo. */
-  @font-face { font-family: "Gotham"; font-weight: 400; font-display: swap;
-    src: local("Gotham Book"), local("Gotham-Book"), url("fonts/Gotham-Book.woff2") format("woff2"); }
-  @font-face { font-family: "Gotham"; font-weight: 500; font-display: swap;
-    src: local("Gotham Medium"), local("Gotham-Medium"), url("fonts/Gotham-Medium.woff2") format("woff2"); }
-  @font-face { font-family: "Gotham"; font-weight: 700; font-display: swap;
-    src: local("Gotham Bold"), local("Gotham-Bold"), url("fonts/Gotham-Bold.woff2") format("woff2"); }
-  @font-face { font-family: "Gotham"; font-weight: 900; font-display: swap;
-    src: local("Gotham Black"), local("Gotham-Black"), url("fonts/Gotham-Black.woff2") format("woff2"); }
-
-  @font-face { font-family: "Montserrat"; font-weight: 400; font-display: swap; src: url("fonts/montserrat-latin-400-normal.woff2") format("woff2"); }
-  @font-face { font-family: "Montserrat"; font-weight: 500; font-display: swap; src: url("fonts/montserrat-latin-500-normal.woff2") format("woff2"); }
-  @font-face { font-family: "Montserrat"; font-weight: 700; font-display: swap; src: url("fonts/montserrat-latin-700-normal.woff2") format("woff2"); }
-  @font-face { font-family: "Montserrat"; font-weight: 900; font-display: swap; src: url("fonts/montserrat-latin-900-normal.woff2") format("woff2"); }
-
-  :root { --ink: #000; --paper: #fff; --gray: #6b6b6b; --pad: clamp(20px, 4vw, 56px); }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { height: 100%; }
-  body {
-    background: var(--paper); color: var(--ink);
-    font-family: "Gotham", "Montserrat", "Helvetica Neue", Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    display: flex; flex-direction: column; min-height: 100vh;
-  }
-  a { color: inherit; text-decoration: none; }
-
-  /* Cabecera */
-  header {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 24px var(--pad);
-  }
-  .brand { display: flex; align-items: center; gap: 14px; }
-  .brand svg { width: 38px; height: 38px; display: block; }
-  .brand span { font-weight: 700; font-size: 17px; letter-spacing: -0.01em; }
-
-  nav ul { list-style: none; display: flex; gap: 32px; }
-  .menu { position: relative; }
-  .menu > button {
-    font: inherit; font-weight: 500; font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase;
-    background: none; border: 0; color: inherit; cursor: pointer;
-    display: flex; align-items: center; gap: 8px; padding: 8px 0;
-  }
-  .menu > button::after {
-    content: ""; width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
-    transform: translateY(-2px) rotate(45deg); transition: transform .2s;
-  }
-  .menu.open > button::after { transform: translateY(2px) rotate(-135deg); }
-  .dropdown {
-    position: absolute; right: 0; top: calc(100% + 8px); min-width: 200px;
-    background: var(--paper); border: 1.5px solid var(--ink); padding: 8px 0;
-    opacity: 0; visibility: hidden; transform: translateY(-4px); transition: all .18s ease;
-  }
-  .menu.open .dropdown { opacity: 1; visibility: visible; transform: none; }
-  .dropdown a { display: block; padding: 12px 20px; font-size: 15px; font-weight: 500; }
-  .dropdown a small { display: block; font-weight: 400; font-size: 12px; color: var(--gray); margin-top: 2px; }
-  .dropdown a:hover, .dropdown a:focus-visible { background: var(--ink); color: var(--paper); outline: none; }
-  .dropdown a:hover small, .dropdown a:focus-visible small { color: #bbb; }
-
-  /* Portada */
-  main { flex: 1; display: flex; align-items: center; padding: 0 var(--pad); }
-  h1 {
-    font-weight: 900; line-height: 1.02; letter-spacing: -0.045em;
-    font-size: clamp(64px, 17vw, 260px);
-  }
-
-  footer { padding: 24px var(--pad); font-size: 13px; color: var(--gray); display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; }
-  footer a:hover { color: var(--ink); }
-
-  @media (max-width: 520px) {
-    .brand span { font-size: 15px; }
-    .brand svg { width: 32px; height: 32px; }
-  }
-</style>
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 
@@ -122,21 +48,8 @@
   <h1>Hi, I’m<br>Víctor.</h1>
 </main>
 
-<footer><span>© <span id="y"></span> Víctor Redondo Vargas</span><span><a href="/loop/contacto/">Contacto</a> · <a href="/loop/privacidad/">Privacidad</a></span></footer>
+<footer><span>© <span id="y"></span> Víctor Redondo Vargas</span><span><a href="/contacto/">Contacto</a> · <a href="/privacidad/">Privacidad</a></span></footer>
 
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-  const menu = document.getElementById('apps');
-  const btn = menu.querySelector('button');
-  const set = open => { menu.classList.toggle('open', open); btn.setAttribute('aria-expanded', open); };
-  const hover = matchMedia('(hover: hover)').matches;
-  btn.addEventListener('click', e => { e.stopPropagation(); set(hover ? true : !menu.classList.contains('open')); });
-  if (hover) {
-    menu.addEventListener('mouseenter', () => set(true));
-    menu.addEventListener('mouseleave', () => set(false));
-  }
-  document.addEventListener('click', e => { if (!menu.contains(e.target)) set(false); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') { set(false); btn.focus(); } });
-</script>
+<script src="/assets/site.js"></script>
 </body>
 </html>

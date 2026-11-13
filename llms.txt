@@ -4,3 +4,7 @@
 
 ## Apps
 - [Loop](https://vredondo.com/loop/en/): Apple Watch and iPhone app that connects Bluetooth treadmills and walking pads (FTMS or RSC) to Apple Fitness and Apple Health with the distance, speed and steps the treadmill measures. One-time purchase, no subscription, 4-day free trial. Details: https://vredondo.com/loop/llms.txt
+
+## Site
+- [Contact](https://vredondo.com/contacto/): contact form for projects, collaborations and questions about the apps (opens the visitor's email app; nothing is sent to a server).
+- [Privacy](https://vredondo.com/privacidad/): privacy policy for vredondo.com (no cookies, no analytics, no third-party content).

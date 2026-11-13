@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto · Víctor Redondo</title>
+<meta name="description" content="Escribe a Víctor Redondo para proyectos, colaboraciones o dudas sobre sus apps.">
+<link rel="icon" href="/logo.svg" type="image/svg+xml">
+<link rel="canonical" href="https://vredondo.com/contacto/">
+<meta property="og:title" content="Contacto · Víctor Redondo">
+<meta property="og:description" content="Escribe a Víctor Redondo para proyectos, colaboraciones o dudas sobre sus apps.">
+<meta property="og:url" content="https://vredondo.com/contacto/">
+<meta name="theme-color" content="#ffffff">
+<link rel="apple-touch-icon" href="/loop/img/icon-180.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Person","@id":"https://vredondo.com/#me","name":"Víctor Redondo Vargas","url":"https://vredondo.com/"},
+ {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Víctor Redondo","item":"https://vredondo.com/"},{"@type":"ListItem","position":2,"name":"Contacto","item":"https://vredondo.com/contacto/"}]}
+]}
+</script>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<header>
+  <a class="brand" href="/" aria-label="Víctor Redondo — inicio">
+    <svg viewBox="184 150 478 480" aria-hidden="true">
+      <polygon points="184,175 364,175 537,475 447,630" fill="currentColor"/>
+      <circle cx="562" cy="250" r="100" fill="currentColor"/>
+    </svg>
+    <span>Víctor Redondo</span>
+  </a>
+
+  <nav aria-label="Principal">
+    <ul>
+      <li class="menu" id="apps">
+        <button type="button" aria-expanded="false" aria-controls="apps-list">Apps</button>
+        <div class="dropdown" id="apps-list">
+          <a href="/loop/">Loop<small>Tu cinta en Apple Fitness</small></a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main class="page">
+  <h1>Contacto</h1>
+  <p class="lead">¿Un proyecto, una colaboración o una idea para una app? Escríbeme. Al enviar se abrirá tu app de correo con el mensaje ya preparado.</p>
+
+  <form id="contact" novalidate>
+    <div class="hp" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+    <div class="row">
+      <div><label for="name">Nombre <b>*</b></label><input class="f" id="name" name="name" autocomplete="name" required></div>
+      <div><label for="email">Email <b>*</b></label><input class="f" id="email" name="email" type="email" autocomplete="email" required></div>
+    </div>
+    <div>
+      <label for="topic">Motivo <b>*</b></label>
+      <select class="f" id="topic" name="topic" required>
+        <option value="">Elige una opción</option>
+        <option>Proyecto o encargo</option>
+        <option>Colaboración</option>
+        <option>Sobre mis apps</option>
+        <option>Prensa</option>
+        <option>Otro</option>
+      </select>
+    </div>
+    <div><label for="msg">Mensaje <b>*</b></label><textarea class="f" id="msg" name="msg" required placeholder="Cuéntame en qué estás pensando"></textarea></div>
+    <label class="check"><input type="checkbox" id="accept" required><span>He leído y acepto la <a href="/privacidad/">política de privacidad</a> <b>*</b></span></label>
+    <p class="legal">Responsable: Víctor Redondo Vargas. Finalidad: responder a tu mensaje. Legitimación: tu consentimiento. Destinatarios: no se ceden datos a terceros. Derechos: acceso, rectificación, supresión y los demás que explica la <a href="/privacidad/">política de privacidad</a>.</p>
+    <p class="error" id="error" role="alert" hidden>Rellena todos los campos marcados con * y acepta la política de privacidad.</p>
+    <div class="actions"><button class="btn" type="submit">Enviar</button><span class="req">* Obligatorio</span></div>
+  </form>
+
+  <div class="done" id="done" hidden>
+    <p>He abierto tu app de correo con el mensaje preparado: solo falta pulsar Enviar. Si no se ha abierto, copia el mensaje y mándalo a <span class="mail">moc.duolci@ved.odnoderv</span>.</p>
+    <pre id="preview"></pre>
+    <div class="actions"><button class="btn" type="button" id="copy">Copiar mensaje</button><a class="btn ghost" href="/">Volver al inicio</a></div>
+  </div>
+
+  <p style="margin-top:48px">Si tu consulta es sobre Loop (compatibilidad de tu cinta, soporte…), mejor usa el <a href="/loop/contacto/">contacto de Loop</a>.</p>
+</main>
+
+<footer><span>© <span id="y"></span> Víctor Redondo Vargas</span><span><a href="/contacto/">Contacto</a> · <a href="/privacidad/">Privacidad</a></span></footer>
+
+<script src="/assets/site.js"></script>
+<script>
+(() => {
+  const to = ['vredondo.dev', 'icloud.com'].join('@');
+  const form = document.getElementById('contact'), err = document.getElementById('error');
+  const done = document.getElementById('done'), pre = document.getElementById('preview');
+  const v = id => document.getElementById(id).value.trim();
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (v('website')) return;
+    const ok = v('name') && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v('email')) && v('topic') && v('msg') && document.getElementById('accept').checked;
+    err.hidden = ok;
+    if (!ok) return;
+    const subject = `[vredondo.com] ${v('topic')} · ${v('name')}`;
+    const body = `${v('msg')}\n\n—\nNombre: ${v('name')}\nEmail: ${v('email')}\nMotivo: ${v('topic')}`;
+    pre.textContent = `Para: ${to}\nAsunto: ${subject}\n\n${body}`;
+    location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    form.hidden = true; done.hidden = false;
+  });
+  document.getElementById('copy').addEventListener('click', async e => {
+    try { await navigator.clipboard.writeText(pre.textContent); e.target.textContent = 'Copiado'; } catch (_) {}
+  });
+})();
+</script>
+</body>
+</html>

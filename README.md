@@ -5,5 +5,9 @@ Web principal de Víctor Redondo: lista de apps. Cada app vive en su propio repo
 ## Tipografía
 
 La web pide `Gotham` y, si no está, usa Montserrat (incluida en `/fonts`).
-Gotham es de pago: con licencia web, añade a `/fonts` `Gotham-Book.woff2`,
-`Gotham-Medium.woff2`, `Gotham-Bold.woff2` y `Gotham-Black.woff2` y se usará sola.
+Gotham es de pago: con licencia web, sube los `.woff2` a `/fonts` y añade su `url()` en `assets/site.css`.
+
+## Páginas
+
+- `/` portada · `/contacto/` formulario (abre la app de correo, sin servidor) · `/privacidad/` política propia de la web.
+- Estilos y menú compartidos en `assets/site.css` y `assets/site.js`.
