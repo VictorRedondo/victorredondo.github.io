@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Página no encontrada · vredondo.com</title>
+<script>
+// Enlaces mal escritos a la tabla de compatibilidad de Loop (p. ej. /loop/compatibility, /compatiblidad):
+// se redirigen a la página buena, en el idioma del enlace si lo lleva (/loop/en/…).
+(function () {
+  var p = location.pathname.toLowerCase();
+  if (/compat|compati|compatib/.test(p)) {
+    var m = p.match(/^\/loop\/(en|fr|it|pt)\//);
+    location.replace('/loop/' + (m ? m[1] + '/' : '') + 'compatibilidad/' + location.hash);
+  }
+})();
+</script>
+<style>
+  :root { --bg: #ffffff; --fg: #111311; --muted: #5b6157; --accent: #3a7a00 }
+  @media (prefers-color-scheme: dark) { :root { --bg: #0b0c0a; --fg: #f1f3ee; --muted: #a4ab9c; --accent: #a3fa00 } }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 600 17px/1.5 system-ui, -apple-system, sans-serif }
+  main { max-width: 34rem; margin: 0 auto; padding: 72px 20px }
+  h1 { font-size: 32px; line-height: 1.1; margin: 0 0 12px }
+  p { color: var(--muted); margin: 0 0 20px }
+  ul { padding-left: 20px; margin: 0 }
+  li + li { margin-top: 8px }
+  a { color: var(--accent); font-weight: 800 }
+</style>
+</head>
+<body>
+<main>
+  <h1>Esta página no existe</h1>
+  <p>Puede que el enlace tenga una errata. Estas son las páginas principales:</p>
+  <ul>
+    <li><a href="/loop/">Loop, la app para conectar tu cinta con el Apple Watch</a></li>
+    <li><a href="/loop/compatibilidad/">Cintas compatibles con Loop</a></li>
+    <li><a href="/loop/faq/">Preguntas frecuentes</a></li>
+    <li><a href="/loop/contacto/">Contacto</a></li>
+    <li><a href="/">vredondo.com</a></li>
+  </ul>
+  <p style="margin-top:28px" lang="en">Page not found. Try <a href="/loop/en/">Loop</a> or the <a href="/loop/en/compatibilidad/">list of compatible treadmills</a>.</p>
+</main>
+</body>
+</html>
